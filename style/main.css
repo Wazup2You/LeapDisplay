@@ -1,0 +1,12 @@
+/* Variables */
+:root {
+    --white: #f4f4f4;
+}
+
+/* Styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--white);
+    text-align: center;
+}

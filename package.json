@@ -1,0 +1,19 @@
+{
+  "name": "leapdisplay",
+  "version": "1.0.0",
+  "description": "Leapcraft sensor overlay",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wazup2You/LeapDisplay.git"
+  },
+  "author": "Luchtverfrissers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wazup2You/LeapDisplay/issues"
+  },
+  "homepage": "https://github.com/Wazup2You/LeapDisplay#readme"
+}
