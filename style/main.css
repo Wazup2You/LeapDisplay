@@ -1,12 +1,19 @@
 /* Variables */
 :root {
     --white: #f4f4f4;
+    --black: #000;
 }
 
 /* Styling */
 html, body {
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     background: var(--white);
     text-align: center;
+    height: 100vh;
+}
+
+.heart {
+    color: red;
 }
