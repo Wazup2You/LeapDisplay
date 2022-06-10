@@ -17405,6 +17405,8 @@ async function fetchApiToken() {
  * Fetches the latest data of one device using auth token
  */
 async function fetchApiData() {
+    document.getElementById("data-container").innerHTML = "";
+
     await fetch(`https://dashboard.cphsense.com/api/v2/devices/${"0123A8032A74EA24FF"}/latest`, {
         headers: {
             'Accept': 'application/json',

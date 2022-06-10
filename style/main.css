@@ -3,6 +3,7 @@
     --white: #f4f4f4;
     --black: #000;
     --green: #3bac81;
+    --gray: #8c92ac;
 }
 
 /* Styling */
@@ -12,6 +13,7 @@ html, body {
     padding: 0;
     background: var(--white);
     height: 100vh;
+    font-family: 'Montserrat';
 }
 
 #data-container {
@@ -20,6 +22,17 @@ html, body {
     flex-wrap: wrap;
     gap: 20px;
     margin: 0 10px;
+    border-radius: 20px;
+    padding: 20px;
+    justify-content: center;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+#data-container svg {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    display:inline-block;
+    fill: var(--green);
 }
 
 .data-wrapper {
@@ -36,7 +49,7 @@ html, body {
     height: 100px;
     padding: 10px;
     background-color: transparent;
-    border: 4px solid var(--green);
+    border: 5px solid var(--green);
     text-align: center;
     font-size: 32px;
     font-weight: bold;
@@ -44,6 +57,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 }
 
 .data-title {
