@@ -2,6 +2,7 @@
 :root {
     --white: #f4f4f4;
     --black: #000;
+    --green: #3bac81;
 }
 
 /* Styling */
@@ -10,8 +11,43 @@ html, body {
     margin: 0;
     padding: 0;
     background: var(--white);
-    text-align: center;
     height: 100vh;
+}
+
+#data-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 10px;
+}
+
+.data-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+    width: fit-content;
+}
+
+.data-circle {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background-color: transparent;
+    border: 4px solid var(--green);
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-title {
+    margin: 0;
 }
 
 .heart {
