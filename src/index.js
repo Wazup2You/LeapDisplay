@@ -55,7 +55,7 @@ async function fetchApiData() {
 }
 
 /**
- * 
+ * Creates the dataItem dom for each data value
  * @param {Array} data - Array of the data from the fetch call
  */
 function createDataItems(data) {
