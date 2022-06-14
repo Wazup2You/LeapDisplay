@@ -13,20 +13,19 @@
     <link rel="stylesheet" href="../style/main.css">
 
     <!-- Font -->
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div>
-        <header>
-            <div id="header-container">
-                <h1>Leapcraft Dashboard🌞</h1>
-            </div>
-        </header>
-
         <main>
             <div id="main-container">
-                <div id="clock-container"></div>                 
-                <button onclick="buttonTimer()">Timer</button>
+                <div class="clock-wrapper">
+                    <div id="date-container"></div>
+                    <div class="timer" id="clock-container"></div>                 
+                    <button onclick="buttonTimer()">Timer</button>
+                </div>
                 <div id="data-container">
                     <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
@@ -61,16 +60,10 @@
                 </div>
             </div>
         </main>
-
-        <footer>
-            <div id="footer-container">
-                <p>Made with <span class="heart">❤</span> by Luchtverfrissers</p>
-            </div>
-        </footer>
     </div>
-    <script src="/src/js/classes/Date.js"></script>
+    <!-- <script src="/src/js/classes/Date.js"></script>
     <script src="/src/js/classes/Clock.js"></script>
-    <script src="/src/js/classes/Timer.js"></script>
+    <script src="/src/js/classes/Timer.js"></script> -->
     <script src="main.js"></script>
 </body>
 </html>

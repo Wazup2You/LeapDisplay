@@ -8,28 +8,35 @@
 
 /* Styling */
 html, body {
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     background: var(--white);
-    height: 100vh;
-    font-family: 'Montserrat';
+    font-family: 'Inter';
+}
+
+#main-container {
+    margin-top: 5px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 5px;
+    justify-content: space-around;
 }
 
 #data-container {
+    width: fit-content;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     gap: 20px;
-    margin: 0 10px;
     border-radius: 20px;
-    padding: 20px;
+    margin: 0 auto;
     justify-content: center;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 #data-container svg {
-    width: 100px;
-    height: 100px;
+    width: 80;
+    height: 80;
     margin: 20px;
     display:inline-block;
     fill: var(--green);
@@ -37,7 +44,8 @@ html, body {
 
 .data-wrapper {
     display: flex;
-    flex-direction: column;
+    gap: 10px;
+    flex-direction: row;
     flex-wrap: nowrap;
     text-align: center;
     width: fit-content;
@@ -45,9 +53,9 @@ html, body {
 
 .data-circle {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    padding: 10px;
+    width: 80px;
+    height: 80px;
+    padding: 5px;
     background-color: transparent;
     border: 5px solid var(--green);
     text-align: center;
@@ -62,6 +70,20 @@ html, body {
 
 .data-title {
     margin: 0;
+}
+
+#date-container {
+    font-size: 50px;
+}
+
+.clock-wrapper {
+    width: 150%;
+    padding: 50px 20px;
+}
+
+.timer {
+    font-weight: bold;
+    font-size: 150px;
 }
 
 .heart {

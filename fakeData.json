@@ -1,28 +1,16 @@
 {
     "sensors": [
         {
-            "key": "Test",
-            "value": 5
+            "key": "Temperatuur",
+            "value": 21
         },
         {
-            "key": "Test",
-            "value": 5
+            "key": "CO2",
+            "value": 45
         },
         {
-            "key": "Test",
-            "value": 5
-        },
-        {
-            "key": "Test",
-            "value": 5
-        },
-        {
-            "key": "Test",
-            "value": 5
-        },
-        {
-            "key": "Test",
-            "value": 5
+            "key": "Geluid",
+            "value": 75
         }
     ]
 }

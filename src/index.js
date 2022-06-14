@@ -3,8 +3,12 @@ import _ from 'lodash';
 // Classes
 import DataItem from './js/classes/DataItem';
 
+// Functions
+import { currentTime } from './js/classes/Clock';
+
 window.onload = () => {
     init();
+    currentTime();
 }
 
 async function init() {

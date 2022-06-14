@@ -27,10 +27,14 @@
              ss = (ss < 10) ? "0" + ss : ss;
               
              let time = hh + ":" + mm;
-          
+            
+            const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById("date-container").innerText = date.toLocaleDateString('nl-NL', options);
             document.getElementById("clock-container").innerText = time; 
             let t = setTimeout(function(){ currentTime() }, 1000);
           }
-          currentTime();
+        //   currentTime();
+
+        export { currentTime };
 //     }
 // }

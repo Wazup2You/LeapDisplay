@@ -17262,6 +17262,56 @@ class DataItem {
     }
 }
 
+/***/ }),
+/* 3 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "currentTime": () => (/* binding */ currentTime)
+/* harmony export */ });
+// export default class Clock {
+//     constructor(time) {
+//         this.time = time;
+//     }
+    
+    /**
+     * The start function
+     */
+    // init() {
+        function currentTime() {
+            let date = new Date(); 
+            let hh = date.getHours();
+            let mm = date.getMinutes();
+            let ss = date.getSeconds();
+            let session = "AM";
+          
+            if(hh == 0){
+                hh = 12;
+            }
+            if(hh > 12){
+                hh = hh - 12;
+                session = "PM";
+             }
+          
+             hh = (hh < 10) ? "0" + hh : hh;
+             mm = (mm < 10) ? "0" + mm : mm;
+             ss = (ss < 10) ? "0" + ss : ss;
+              
+             let time = hh + ":" + mm;
+            
+            const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById("date-container").innerText = date.toLocaleDateString('nl-NL', options);
+            document.getElementById("clock-container").innerText = time; 
+            let t = setTimeout(function(){ currentTime() }, 1000);
+          }
+        //   currentTime();
+
+        
+//     }
+// }
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -17363,13 +17413,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _js_classes_DataItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _js_classes_Clock__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 
 
 // Classes
 
 
+// Functions
+
+
 window.onload = () => {
     init();
+    (0,_js_classes_Clock__WEBPACK_IMPORTED_MODULE_2__.currentTime)();
 }
 
 async function init() {
