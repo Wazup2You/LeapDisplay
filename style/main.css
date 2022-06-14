@@ -33,7 +33,6 @@ html, body {
     flex-wrap: nowrap;
     gap: 20px;
     border-radius: 20px;
-    margin: 0 auto;
     justify-content: center;
 }
 #data-container svg {
