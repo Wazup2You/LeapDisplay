@@ -1,0 +1,28 @@
+{
+    "sensors": [
+        {
+            "key": "Test",
+            "value": 5
+        },
+        {
+            "key": "Test",
+            "value": 5
+        },
+        {
+            "key": "Test",
+            "value": 5
+        },
+        {
+            "key": "Test",
+            "value": 5
+        },
+        {
+            "key": "Test",
+            "value": 5
+        },
+        {
+            "key": "Test",
+            "value": 5
+        }
+    ]
+}
