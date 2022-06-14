@@ -17422,6 +17422,23 @@ __webpack_require__.r(__webpack_exports__);
 // Functions
 
 
+let fakeDate = {
+    "sensors": [
+        {
+            "key": "Temperatuur",
+            "value": 21
+        },
+        {
+            "key": "CO2",
+            "value": 45
+        },
+        {
+            "key": "Geluid",
+            "value": 75
+        }
+    ]
+}
+
 window.onload = () => {
     init();
     (0,_js_classes_Clock__WEBPACK_IMPORTED_MODULE_2__.currentTime)();
@@ -17493,14 +17510,10 @@ async function createDataItems(data) {
     } else {
         console.log("using fake data");
         document.getElementById("data-container").innerHTML = "";
-        await fetch("http://127.0.0.1:5500/fakeData.json")
-        .then(res => res.json())
-        .then((data) => {
-            for (let sensor of data.sensors) {
-                let dataItem = new _js_classes_DataItem__WEBPACK_IMPORTED_MODULE_1__["default"](sensor);
-                dataItem.init();
-            }
-        });
+        for (let sensor of fakeDate.sensors) {
+            let dataItem = new _js_classes_DataItem__WEBPACK_IMPORTED_MODULE_1__["default"](sensor);
+            dataItem.init();
+        };
     }
 }
 })();
