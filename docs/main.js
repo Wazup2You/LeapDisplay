@@ -17288,12 +17288,8 @@ __webpack_require__.r(__webpack_exports__);
             let session = "AM";
           
             if(hh == 0){
-                hh = 12;
+                hh =24;
             }
-            if(hh > 12){
-                hh = hh - 12;
-                session = "PM";
-             }
           
              hh = (hh < 10) ? "0" + hh : hh;
              mm = (mm < 10) ? "0" + mm : mm;
