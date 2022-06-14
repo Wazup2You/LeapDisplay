@@ -12,7 +12,11 @@ async function init() {
 
     await fetchApiToken();
 
-    if (localStorage.getItem('access_token')) fetchApiData();
+    if (localStorage.getItem('access_token')) {
+        fetchApiData();
+    } else {
+        createDataItems();
+    }
 }
 
 /**
@@ -51,16 +55,31 @@ async function fetchApiData() {
     })
     .then(res => res.json())
     .then(data => createDataItems(data))
-    .catch(err => console.error(err));
+    .catch((err) => {
+        console.error(err)
+    });
 }
 
 /**
  * Creates the dataItem dom for each data value
  * @param {Array} data - Array of the data from the fetch call
  */
-function createDataItems(data) {
-    for (let sensor of data.data.sensors) {
-        let dataItem = new DataItem(sensor);
-        dataItem.init();
+async function createDataItems(data) {
+    if (data) {
+        for (let sensor of data.data.sensors) {
+            let dataItem = new DataItem(sensor);
+            dataItem.init();
+        }
+    } else {
+        console.log("using fake data");
+        document.getElementById("data-container").innerHTML = "";
+        await fetch("http://127.0.0.1:5500/fakeData.json")
+        .then(res => res.json())
+        .then((data) => {
+            for (let sensor of data.sensors) {
+                let dataItem = new DataItem(sensor);
+                dataItem.init();
+            }
+        });
     }
 }
