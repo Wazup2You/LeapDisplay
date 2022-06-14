@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leapcraft Dashboard</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="./main.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <main>
+            <div id="main-container">
+                <div class="clock-wrapper">
+                    <div id="date-container"></div>
+                    <div class="timer" id="clock-container"></div>                 
+                    <button onclick="buttonTimer()">Timer</button>
+                </div>
+                <div id="data-container">
+                    <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+                      <circle fill="inherit" stroke="none" cx="6" cy="50" r="6">
+                        <animateTransform 
+                           attributeName="transform" 
+                           dur="1s" 
+                           type="translate" 
+                           values="0 15 ; 0 -15; 0 15" 
+                           repeatCount="indefinite" 
+                           begin="0.1"/>
+                      </circle>
+                      <circle fill="inherit" stroke="none" cx="30" cy="50" r="6">
+                        <animateTransform 
+                           attributeName="transform" 
+                           dur="1s" 
+                           type="translate" 
+                           values="0 10 ; 0 -10; 0 10" 
+                           repeatCount="indefinite" 
+                           begin="0.2"/>
+                      </circle>
+                      <circle fill="inherit" stroke="none" cx="54" cy="50" r="6">
+                        <animateTransform 
+                           attributeName="transform" 
+                           dur="1s" 
+                           type="translate" 
+                           values="0 5 ; 0 -5; 0 5" 
+                           repeatCount="indefinite" 
+                           begin="0.3"/>
+                      </circle>
+                    </svg>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- <script src="/src/js/classes/Date.js"></script>
+    <script src="/src/js/classes/Clock.js"></script>
+    <script src="/src/js/classes/Timer.js"></script> -->
+    <script src="main.js"></script>
+</body>
+</html>

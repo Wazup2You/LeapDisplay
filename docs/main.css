@@ -1,0 +1,91 @@
+/* Variables */
+:root {
+    --white: #f4f4f4;
+    --black: #000;
+    --green: #3bac81;
+    --gray: #8c92ac;
+}
+
+/* Styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--white);
+    font-family: 'Inter';
+}
+
+#main-container {
+    margin-top: 5px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 5px;
+    justify-content: space-around;
+}
+
+#data-container {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+    border-radius: 20px;
+    margin: 0 auto;
+    justify-content: center;
+}
+#data-container svg {
+    width: 80;
+    height: 80;
+    margin: 20px;
+    display:inline-block;
+    fill: var(--green);
+}
+
+.data-wrapper {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align: center;
+    width: fit-content;
+}
+
+.data-circle {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    background-color: transparent;
+    border: 5px solid var(--green);
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+.data-title {
+    margin: 0;
+}
+
+#date-container {
+    font-size: 50px;
+}
+
+.clock-wrapper {
+    width: 150%;
+    padding: 50px 20px;
+}
+
+.timer {
+    font-weight: bold;
+    font-size: 150px;
+}
+
+.heart {
+    color: red;
+}
