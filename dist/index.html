@@ -11,6 +11,7 @@
 
     <!-- Styling -->
     <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/styles.css" />
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,14 +20,14 @@
 </head>
 <body>
     <div>
-        <main>
-            <div id="main-container">
+        <main class="app"></mainclass>
+            <!-- <div id="main-container">
                 <div class="clock-wrapper">
                     <div id="date-container"></div>
-                    <div class="timer" id="clock-container"></div>                 
+                    <div class="timer" id="clock-container"></div>                  -->
                     <!-- <button onclick="buttonTimer()">Timer</button> -->
                 </div>
-                <div id="data-container">
+                <!-- <div id="data-container">
                     <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
                       <circle fill="inherit" stroke="none" cx="6" cy="50" r="6">
@@ -57,7 +58,42 @@
                            begin="0.3"/>
                       </circle>
                     </svg>
-                </div>
+                </div> -->
+                <progress id="js-progress" value="0"></progress>
+      <div class="progress-bar"></div>
+      <div class="timer">
+        <div class="button-group mode-buttons" id="js-mode-buttons">
+          <button
+            data-mode="pomodoro"
+            class="button active mode-button"
+            id="js-pomodoro"
+          >
+            Pomodoro
+          </button>
+          <button
+            data-mode="shortBreak"
+            class="button mode-button"
+            id="js-short-break"
+          >
+            Short break
+          </button>
+          <button
+            data-mode="longBreak"
+            class="button mode-button"
+            id="js-long-break"
+          >
+            Long break
+          </button>
+        </div>
+        <div class="clock" id="js-clock">
+          <span id="js-minutes">25</span>
+          <span class="separator">:</span>
+          <span id="js-seconds">00</span>
+        </div>
+        <button class="main-button" data-action="start" id="js-btn">
+          Start
+        </button>
+      </div>
             </div>
         </main>
     </div>
