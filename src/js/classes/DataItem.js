@@ -6,21 +6,22 @@ export default class DataItem {
     /**
      * The start function
      */
-    init() {
+    init(index) {
         console.log('Data item mounted');
-        this.create();
+        this.create(index);
     }
 
     /**
      * Creates the DOM element for showing data
      */
-    create() {
+    create(index) {
         // Containers
         let container = document.getElementById('data-container');
 
         // Wrapper
         let dataWrapper = document.createElement('div');
         dataWrapper.classList.add('data-wrapper');
+        dataWrapper.setAttribute('id', `dataItem-${index}`);
 
         // Circle
         let dataCircle = document.createElement('div');

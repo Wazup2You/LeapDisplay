@@ -46,21 +46,23 @@ html, body {
 .data-wrapper {
     display: flex;
     gap: 10px;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     text-align: center;
     width: fit-content;
+    font-size: 25px;
+    margin-top: 20px;
 }
 
 .data-circle {
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     padding: 5px;
     background-color: transparent;
-    border: 5px solid var(--green);
+    border: 10px solid var(--green);
     text-align: center;
-    font-size: 32px;
+    font-size: 64px;
     font-weight: bold;
     line-height: 50px;
     display: flex;
@@ -69,10 +71,10 @@ html, body {
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 }
 .data-wrapper:nth-child(2) .data-circle {
-    border: 5px solid var(--orange);
+    border: 10px solid var(--orange);
 }
 .data-wrapper:nth-child(3) .data-circle {
-    border: 5px solid var(--red);
+    border: 10px solid var(--red);
 }
 
 .data-title {
@@ -96,4 +98,7 @@ html, body {
 
 .heart {
     color: red;
+}
+.hidden {
+    display: none;
 }

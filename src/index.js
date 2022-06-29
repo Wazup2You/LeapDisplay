@@ -6,6 +6,9 @@ import DataItem from './js/classes/DataItem';
 // Functions
 import { currentTime } from './js/classes/Clock';
 
+// Functions
+import { displaySlide } from './js/classes/SlideShow';
+
 let fakeDate = {
     "sensors": [
         {
@@ -26,6 +29,7 @@ let fakeDate = {
 window.onload = () => {
     init();
     currentTime();
+    // displaySlide();
 }
 
 async function init() {
@@ -34,10 +38,32 @@ async function init() {
     await fetchApiToken();
 
     if (localStorage.getItem('access_token')) {
-        fetchApiData();
+      await fetchApiData();
     } else {
-        createDataItems();
+        await createDataItems();
+    } 
+
+} 
+
+// Slide show
+let currentSlideIndex = 0;
+function showSlide() {
+    console.log('in show slide')
+    let i;
+    for (i = 0; i < fakeDate.sensors.length; i++) {
+        console.log('test')
+    let showItem = document.getElementById(`dataItem-${i}`)
+    showItem.classList.remove("data-wrapper")
+    showItem.classList.add("hidden")
     }
+    console.log(currentSlideIndex)
+    currentSlideIndex++;
+    console.log(currentSlideIndex)
+    if (currentSlideIndex == fakeDate.sensors.length) {currentSlideIndex = 0}   
+    let item = document.getElementById(`dataItem-${currentSlideIndex}`)
+    item.classList.remove('hidden')
+    item.classList.add('data-wrapper')
+    setTimeout(showSlide, 3000); // Change image every 2 seconds
 }
 
 /**
@@ -75,7 +101,7 @@ async function fetchApiData() {
         }
     })
     .then(res => res.json())
-    .then(data => createDataItems(data))
+    .then(data => createDataItems(data[0]))
     .catch((err) => {
         console.error(err)
     });
@@ -96,7 +122,10 @@ async function createDataItems(data) {
         document.getElementById("data-container").innerHTML = "";
         for (let sensor of fakeDate.sensors) {
             let dataItem = new DataItem(sensor);
-            dataItem.init();
+            let index = fakeDate.sensors.findIndex(item => item == sensor); 
+            dataItem.init(index);
+
         };
     }
+    showSlide()
 }

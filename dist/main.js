@@ -17225,21 +17225,22 @@ class DataItem {
     /**
      * The start function
      */
-    init() {
+    init(index) {
         console.log('Data item mounted');
-        this.create();
+        this.create(index);
     }
 
     /**
      * Creates the DOM element for showing data
      */
-    create() {
+    create(index) {
         // Containers
         let container = document.getElementById('data-container');
 
         // Wrapper
         let dataWrapper = document.createElement('div');
         dataWrapper.classList.add('data-wrapper');
+        dataWrapper.setAttribute('id', `dataItem-${index}`);
 
         // Circle
         let dataCircle = document.createElement('div');
@@ -17306,6 +17307,16 @@ __webpack_require__.r(__webpack_exports__);
 
         
 //     }
+// }
+
+/***/ }),
+/* 4 */
+/***/ (() => {
+
+// let currentSlideIndex = 0;
+
+// function displaySlide(){
+//     let slide = slides[currentSlideIndex];
 // }
 
 /***/ })
@@ -17410,9 +17421,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _js_classes_DataItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _js_classes_Clock__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _js_classes_SlideShow__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _js_classes_SlideShow__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_js_classes_SlideShow__WEBPACK_IMPORTED_MODULE_3__);
 
 
 // Classes
+
+
+// Functions
 
 
 // Functions
@@ -17438,6 +17454,7 @@ let fakeDate = {
 window.onload = () => {
     init();
     (0,_js_classes_Clock__WEBPACK_IMPORTED_MODULE_2__.currentTime)();
+    // displaySlide();
 }
 
 async function init() {
@@ -17446,10 +17463,32 @@ async function init() {
     await fetchApiToken();
 
     if (localStorage.getItem('access_token')) {
-        fetchApiData();
+      await fetchApiData();
     } else {
-        createDataItems();
+        await createDataItems();
+    } 
+
+} 
+
+// Slide show
+let currentSlideIndex = 0;
+function showSlide() {
+    console.log('in show slide')
+    let i;
+    for (i = 0; i < fakeDate.sensors.length; i++) {
+        console.log('test')
+    let showItem = document.getElementById(`dataItem-${i}`)
+    showItem.classList.remove("data-wrapper")
+    showItem.classList.add("hidden")
     }
+    console.log(currentSlideIndex)
+    currentSlideIndex++;
+    console.log(currentSlideIndex)
+    if (currentSlideIndex == fakeDate.sensors.length) {currentSlideIndex = 0}   
+    let item = document.getElementById(`dataItem-${currentSlideIndex}`)
+    item.classList.remove('hidden')
+    item.classList.add('data-wrapper')
+    setTimeout(showSlide, 3000); // Change image every 2 seconds
 }
 
 /**
@@ -17487,7 +17526,7 @@ async function fetchApiData() {
         }
     })
     .then(res => res.json())
-    .then(data => createDataItems(data))
+    .then(data => createDataItems(data[0]))
     .catch((err) => {
         console.error(err)
     });
@@ -17508,9 +17547,12 @@ async function createDataItems(data) {
         document.getElementById("data-container").innerHTML = "";
         for (let sensor of fakeDate.sensors) {
             let dataItem = new _js_classes_DataItem__WEBPACK_IMPORTED_MODULE_1__["default"](sensor);
-            dataItem.init();
+            let index = fakeDate.sensors.findIndex(item => item == sensor); 
+            dataItem.init(index);
+
         };
     }
+    showSlide()
 }
 })();
 
